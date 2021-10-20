@@ -10,8 +10,6 @@ RUN git clone https://github.com/Microsoft/vcpkg.git /opt/vcpkg
 
 WORKDIR /opt/vcpkg
 
-RUN ./vcpkg install nlohmann-json
-
 RUN ./bootstrap-vcpkg.sh 
 
 RUN ./vcpkg install nlohmann-json
