@@ -10,4 +10,6 @@ RUN git clone https://github.com/Microsoft/vcpkg.git /opt/vcpkg
 
 WORKDIR /opt/vcpkg
 
+RUN ./vcpkg install nlohmann-json
+
 RUN ./bootstrap-vcpkg.sh && ./vcpkg integrate install && ./vcpkg integrate bash && echo 'export PATH=$PATH:/opt/vcpkg' >>~/.bashrc
