@@ -12,4 +12,8 @@ WORKDIR /opt/vcpkg
 
 RUN ./vcpkg install nlohmann-json
 
-RUN ./bootstrap-vcpkg.sh && ./vcpkg integrate install && ./vcpkg integrate bash && echo 'export PATH=$PATH:/opt/vcpkg' >>~/.bashrc
+RUN ./bootstrap-vcpkg.sh 
+
+RUN ./vcpkg install nlohmann-json
+
+RUN ./vcpkg integrate install && ./vcpkg integrate bash && echo 'export PATH=$PATH:/opt/vcpkg' >>~/.bashrc
