@@ -4,7 +4,7 @@ ENV TZ=Asia/Seoul
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN apt update && apt -y install git curl unzip tar zip
+RUN apt update && apt -y install git curl unzip tar zip pkg-config
 
 RUN git clone https://github.com/Microsoft/vcpkg.git /opt/vcpkg
 
