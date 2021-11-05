@@ -1,4 +1,4 @@
-FROM moony/remote-dev-cpp:v0.3
+FROM moony/remote-dev-cpp:v0.4
 
 ENV TZ=Asia/Seoul
 
