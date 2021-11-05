@@ -12,7 +12,7 @@ WORKDIR /opt/vcpkg
 
 RUN ./bootstrap-vcpkg.sh 
 
-RUN ./vcpkg install nlohmann-json ffmpeg openssl
+RUN ./vcpkg install nlohmann-json ffmpeg openssl boost-process
 
 RUN ./vcpkg install live555 --head
 
