@@ -6,9 +6,9 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt update && apt -y install git curl unzip tar zip pkg-config nasm subversion
 
-RUN git clone https://github.com/Microsoft/vcpkg.git /opt/vcpkg
+ADD 2021.04.30.tar.gz /opt/
 
-WORKDIR /opt/vcpkg
+WORKDIR /opt/vcpkg-2021.04.30
 
 RUN ./bootstrap-vcpkg.sh 
 
