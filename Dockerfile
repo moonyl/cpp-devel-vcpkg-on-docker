@@ -1,3 +1,5 @@
+FROM moony/qt-dev:5.12.7 AS qt_build
+
 FROM moony/remote-dev-cpp:v0.5
 
 ENV TZ=Asia/Seoul
@@ -5,6 +7,8 @@ ENV TZ=Asia/Seoul
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt update && apt -y install git curl unzip tar zip pkg-config nasm subversion
+
+COPY --from=qt_build /opt/Qt5.12.7 /opt/Qt5.12.7
 
 ADD 2021.04.30.tar.gz /opt/
 
