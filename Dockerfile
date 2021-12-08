@@ -6,7 +6,7 @@ ENV TZ=Asia/Seoul
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN apt update && apt -y install git curl unzip tar zip pkg-config nasm subversion
+RUN apt update && apt -y install git curl unzip tar zip pkg-config nasm subversion libx11-dev
 
 COPY --from=qt_build /opt/Qt5.12.7 /opt/Qt5.12.7
 
