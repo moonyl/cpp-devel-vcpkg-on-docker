@@ -1,12 +1,16 @@
 FROM moony/qt-dev:5.12.7 AS qt_build
 
-FROM moony/remote-dev-cpp:v0.5
+FROM ubuntu:focal
 
 ENV TZ=Asia/Seoul
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN apt update && apt -y install git curl unzip tar zip pkg-config nasm subversion libx11-dev
+RUN apt update
+
+RUN apt -y install build-essential gcc g++ g++-8 gdb clang cmake rsync tar python
+
+RUN apt -y install git curl unzip tar zip pkg-config nasm subversion libx11-dev
 
 COPY --from=qt_build /opt/Qt5.12.7 /opt/Qt5.12.7
 
